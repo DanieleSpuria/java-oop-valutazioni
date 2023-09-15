@@ -10,6 +10,7 @@ public class Main {
 		
 		int lng = 20;
 		Studente[] studenti = new Studente[lng];
+		int promossi = 0;
 		
 		for (int i = 0; i < lng; i++) {
 			studenti[i]          = new Studente();
@@ -22,8 +23,13 @@ public class Main {
 			System.out.println("media : " + studenti[i].media);
 			System.out.println("assenze : " + studenti[i].assenze);
 
-			if (studenti[i].risultato()) System.out.println("\nPromosso");
-			else System.out.println("\nBocciato");
-		}			
+			if (studenti[i].risultato()) {
+				System.out.println("\nPromosso");
+				promossi++;
+			} else System.out.println("\nBocciato");
+		}
+		
+		System.out.println("\n-----------------------\n");
+		System.out.println("Studenti promossi: " + promossi);
 	}
 }
